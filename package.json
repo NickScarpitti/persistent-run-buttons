@@ -1,9 +1,13 @@
 {
 	"name": "persistent-run-buttons",
 	"publisher": "nick-scarpitti",
-	"displayName": "Persistent Run Button",
+	"displayName": "Persistent Run Buttons",
 	"description": "Adds a persistent run button to the VS Code command center",
-	"version": "0.0.1",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/NickScarpitti/persistent-run-buttons.git"
+	},
 	"engines": {
 		"vscode": "^1.108.1"
 	},
