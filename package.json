@@ -1,0 +1,101 @@
+{
+	"name": "persistent-run-buttons",
+	"publisher": "nick-scarpitti",
+	"displayName": "Persistent Run Button",
+	"description": "Adds a persistent run button to the VS Code command center",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.108.1"
+	},
+	"categories": [
+		"Debuggers"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "persistentRunButton.selectConfig",
+				"title": "Select Run Config",
+				"icon": {
+					"light": "./resources/light/run-config.svg",
+					"dark": "./resources/dark/run-config.svg"
+				}
+			},
+			{
+				"command": "persistentRunButton.runSelected",
+				"title": "Run",
+				"icon": "$(run)"
+			},
+			{
+				"command": "persistentRunButton.debugSelected",
+				"title": "Debug",
+				"icon": "$(debug-alt)"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "persistentRunButton.runSelected",
+					"when": "false"
+				},
+				{
+					"command": "persistentRunButton.debugSelected",
+					"when": "false"
+				}
+			],
+			"editor/title": [
+				{
+					"command": "persistentRunButton.runSelected",
+					"group": "navigation@1",
+					"when": "config.persistentRunButton.showInEditorTitle"
+				},
+				{
+					"command": "persistentRunButton.debugSelected",
+					"group": "navigation@2",
+					"when": "config.persistentRunButton.showInEditorTitle"
+				},
+				{
+					"command": "persistentRunButton.selectConfig",
+					"group": "navigation@3",
+					"when": "config.persistentRunButton.showInEditorTitle"
+				}
+			]
+		},
+		"configuration": {
+			"title": "Persistent Run Button",
+			"properties": {
+				"persistentRunButton.showInEditorTitle": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show the run buttons in the editor title bar at the top"
+				},
+				"persistentRunButton.showInStatusBar": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show the run buttons in the status bar as an additional location"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src",
+		"test": "vscode-test"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.108.1",
+		"@types/mocha": "^10.0.10",
+		"@types/node": "25.0.9",
+		"typescript-eslint": "^8.53.0",
+		"eslint": "^9.39.2",
+		"typescript": "^5.9.3",
+		"@vscode/test-cli": "^0.0.12",
+		"@vscode/test-electron": "^2.5.2"
+	}
+}
