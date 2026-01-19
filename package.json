@@ -53,17 +53,17 @@
 			"editor/title": [
 				{
 					"command": "persistentRunButton.runSelected",
-					"group": "navigation@1",
+					"group": "navigation@1.11",
 					"when": "config.persistentRunButton.showInEditorTitle"
 				},
 				{
 					"command": "persistentRunButton.debugSelected",
-					"group": "navigation@2",
+					"group": "navigation@1.12",
 					"when": "config.persistentRunButton.showInEditorTitle"
 				},
 				{
 					"command": "persistentRunButton.selectConfig",
-					"group": "navigation@3",
+					"group": "navigation@1.13",
 					"when": "config.persistentRunButton.showInEditorTitle"
 				}
 			]
@@ -93,6 +93,7 @@
 		"test": "vscode-test"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "2.3.11",
 		"@types/vscode": "^1.108.1",
 		"@types/mocha": "^10.0.10",
 		"@types/node": "25.0.9",

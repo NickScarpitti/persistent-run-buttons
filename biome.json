@@ -1,0 +1,127 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"ignoreUnknown": false,
+		"includes": [
+			"**/*.{ts,tsx}",
+			"**/*.{js,jsx}",
+			"**/*.{html,css,md,json}",
+			"**/src/**/*",
+			"**/.vscode/**/*",
+			"**/index.html",
+			"**/vite.config.js",
+			"!node_modules",
+			"!.next",
+			"!out",
+			"!build",
+			"!dist",
+			"!next-env.d.ts",
+			"!**/src/routeTree.gen.ts",
+			"!**/src/styles.css",
+			"!**/src/routeTree.gen.ts"
+		]
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": true,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineEnding": "lf",
+		"lineWidth": 170,
+		"attributePosition": "auto",
+		"bracketSameLine": false,
+		"bracketSpacing": true,
+		"expand": "auto",
+		"useEditorconfig": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"correctness": {
+				"useExhaustiveDependencies": "warn",
+				"useHookAtTopLevel": "error"
+			},
+			"suspicious": {
+				"noExplicitAny": "off"
+			},
+			"performance": {
+				"useSolidForComponent": "off",
+				"recommended": true,
+				"noAccumulatingSpread": "info",
+				"noAwaitInLoops": "info",
+				"noBarrelFile": "info",
+				"noDelete": "info",
+				"noDynamicNamespaceImportAccess": "info",
+				"noImgElement": "off",
+				"noNamespaceImport": "info",
+				"noReExportAll": "info",
+				"noUnwantedPolyfillio": "info",
+				"useGoogleFontPreconnect": "info",
+				"useTopLevelRegex": "info"
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"jsxQuoteStyle": "single",
+			"quoteProperties": "asNeeded",
+			"trailingCommas": "none",
+			"semicolons": "always",
+			"arrowParentheses": "always",
+			"bracketSameLine": false,
+			"quoteStyle": "single",
+			"attributePosition": "auto",
+			"bracketSpacing": true,
+			"indentStyle": "tab",
+			"indentWidth": 2,
+			"lineEnding": "lf",
+			"lineWidth": 170
+		},
+		"linter": {
+			"enabled": true
+		}
+	},
+	"html": {
+		"formatter": {
+			"enabled": true,
+			"indentScriptAndStyle": false,
+			"selfCloseVoidElements": "always",
+			"lineWidth": 170,
+			"indentStyle": "tab",
+			"indentWidth": 2,
+			"lineEnding": "lf"
+		}
+	},
+	"assist": {
+		"enabled": true,
+		"actions": {
+			"source": {
+				"organizeImports": "on",
+				"recommended": true
+			},
+			"recommended": true
+		}
+	},
+	"css": {
+		"formatter": {
+			"enabled": true,
+			"indentStyle": "tab",
+			"indentWidth": 2,
+			"lineEnding": "lf",
+			"lineWidth": 170,
+			"quoteStyle": "double"
+		},
+		"parser": {
+			"tailwindDirectives": true
+		},
+		"linter": {
+			"enabled": true
+		}
+	}
+}
